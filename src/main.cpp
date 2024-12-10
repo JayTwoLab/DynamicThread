@@ -63,9 +63,14 @@ public:
     }
 };
 
-class ExampleTask {
+class ThreadTask {
+protected: 
+	virtual void performTask() = 0;
+};
+
+class ExampleTask : ThreadTask {
 public:
-    void performTask() {
+    void performTask() override {
         static int counter = 0;
         std::cout << "ExampleTask is running: " << counter++ << "\n";
     }
