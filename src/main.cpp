@@ -5,7 +5,7 @@
 #include <chrono>
 
 class DynamicThread {
-private:
+protected:
     std::thread workerThread;          // 스레드 객체
     std::atomic<bool> running;         // 스레드 실행 상태 플래그
     std::function<void()> task;        // 실행할 작업 함수
@@ -63,14 +63,17 @@ public:
     }
 };
 
+// 멀티 스레드 작업 베이스 클래스
 class ThreadTask {
 protected: 
 	virtual void performTask() = 0;
 };
 
+// 멀티 스레드 작업
 class ExampleTask : ThreadTask {
 public:
     void performTask() override {
+        // 여기서 부터 멀티 스레드에서 수행하는 작업 시작
         static int counter = 0;
         std::cout << "ExampleTask is running: " << counter++ << "\n";
     }
@@ -80,14 +83,15 @@ int main() {
     DynamicThread dt;
     ExampleTask task;
 
-    // 작업 간격 설정 (500ms)
+    // 멀티 스레드 내의 작업 함수의 간격 설정 (기본값 500ms)
     dt.setInterval(std::chrono::milliseconds(500));
 
-    // 멤버 함수 등록 및 스레드 시작
+    // 멤버 함수 등록 및 멀티 스레드 시작
     dt.start(&ExampleTask::performTask, &task);
 
-    std::this_thread::sleep_for(std::chrono::seconds(5)); // 5초간 실행
-    dt.stop(); // 스레드 중지
+    std::this_thread::sleep_for(std::chrono::seconds(5)); // 메인 쓰레드를 5초간 실행하며 대기
+	
+    dt.stop(); // 멀티 스레드 중지
 
     std::cout << "Thread stopped.\n";
 
