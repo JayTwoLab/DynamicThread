@@ -16,7 +16,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 if(WIN32)
     # Windows 설정
     add_definitions(-D_WIN32_WINNT=0x0601)
-    set(PLATFORM_LIBS ws2_32)
+    # set(PLATFORM_LIBS ws2_32)
 elseif(UNIX)
     # Unix 계열 설정
     if(CMAKE_SYSTEM_NAME STREQUAL "Android")
@@ -55,6 +55,7 @@ endif()
 
 add_executable(${EXE_NAME}
     main.cpp
+    DynamicThread.h
 )
 
 target_link_libraries(${EXE_NAME} PRIVATE
