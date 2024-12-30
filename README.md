@@ -15,16 +15,19 @@ public:
 };
 
 int main() {
-    j2::DynamicThread dt;
     ExampleTask task;
 
-    // [2] Setting the interval for work functions within multi-threads (default 500ms)
+    // [2] Create Synamic Thread	
+    j2::DynamicThread dt;
+
+    // [3] Setting the interval for work functions within multi-threads (default 500ms)
     dt.setInterval(std::chrono::milliseconds(500));
 
-    // [3] Registering member functions and Starting multi-threads
+    // [4] Registering task and Starting multi-threads
     dt.start(&ExampleTask::performTask, &task);
 
-    std::this_thread::sleep_for(std::chrono::seconds(5)); // Wait for the main thread to run for 5 seconds
+   // Wait for the main thread to run for 5 seconds
+    std::this_thread::sleep_for(std::chrono::seconds(5)); 
 	
     dt.stop(); // Stop multi-threads
 
