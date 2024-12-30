@@ -5,7 +5,7 @@
 ## Usage
 ```cpp
 // [1] Create multi-threaded jobs
-class ExampleTask : ThreadTask {
+class ExampleTask : j2::ThreadTask {
 public:
     void performTask() override {
         // Starting from here, you can start doing things in multi-threads
@@ -15,7 +15,7 @@ public:
 };
 
 int main() {
-    DynamicThread dt;
+    j2::DynamicThread dt;
     ExampleTask task;
 
     // [2] Setting the interval for work functions within multi-threads (default 500ms)
