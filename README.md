@@ -36,3 +36,6 @@ int main() {
     return 0;
 }
 ```
+
+## License
+- MIT License
