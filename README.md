@@ -38,4 +38,5 @@ int main() {
 ```
 
 ## License
-- MIT License
+- `MIT` License
+- This is part of the j2(`jaytwo`) library.
