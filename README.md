@@ -2,7 +2,7 @@
 
 - Dynamic Thread for Modern C++
 
-## Usgae
+## Usage
 ```cpp
 // Multi-threaded jobs
 class ExampleTask : ThreadTask {
