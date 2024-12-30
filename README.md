@@ -17,7 +17,7 @@ public:
 int main() {
     ExampleTask task;
 
-    // [2] Create Synamic Thread	
+    // [2] Create Dynamic Thread	
     j2::DynamicThread dt;
 
     // [3] Setting the interval for work functions within multi-threads (default 500ms)
