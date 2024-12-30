@@ -4,7 +4,7 @@
 
 ## Usage
 ```cpp
-// Multi-threaded jobs
+// [1] Create multi-threaded jobs
 class ExampleTask : ThreadTask {
 public:
     void performTask() override {
@@ -18,10 +18,10 @@ int main() {
     DynamicThread dt;
     ExampleTask task;
 
-    // Setting the interval for work functions within multi-threads (default 500ms)
+    // [2] Setting the interval for work functions within multi-threads (default 500ms)
     dt.setInterval(std::chrono::milliseconds(500));
 
-    // Registering member functions and starting multi-threads
+    // [3] Registering member functions and Starting multi-threads
     dt.start(&ExampleTask::performTask, &task);
 
     std::this_thread::sleep_for(std::chrono::seconds(5)); // Wait for the main thread to run for 5 seconds
