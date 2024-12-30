@@ -1,6 +1,6 @@
 # DynamicThread
 
-- Dynamic Thread for Modern C++
+- Dynamic Thread for Modern C++ (17 or higher version)
 
 ## Usage
 ```cpp
