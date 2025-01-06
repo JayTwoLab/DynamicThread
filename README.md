@@ -31,7 +31,7 @@ int main() {
     // [4] Registering task and Starting multi-threads
     dt.start(&ExampleTask::performTask, &task);
 
-   // Wait for the main thread to run for 5 seconds
+   // Wait for the main thread to run for 5 seconds, on the main thread.
     std::this_thread::sleep_for(std::chrono::seconds(5)); 
 	
     dt.stop(); // Stop multi-threads
