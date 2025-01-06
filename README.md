@@ -1,8 +1,11 @@
 # DynamicThread
 
 - Dynamic Thread for Modern C++ (17 or higher version)
+   - The thread provided by modern c++ works on the generator. This class can run after creation, when you want to start.
+   - Threads in modern c++ cannot stop threads in progress. This thread has the ability to make a normal stop. 
 
 ## Usage
+
 ```cpp
 #include "DynamicThread.h" 
 
