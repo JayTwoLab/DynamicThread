@@ -4,6 +4,8 @@
 
 ## Usage
 ```cpp
+#include "DynamicThread.h" 
+
 // [1] Create multi-threaded jobs
 class ExampleTask : j2::ThreadTask {
 public:
