@@ -10,7 +10,7 @@ project(DynaminThread)
 
 set(EXE_NAME "dynamic_thread")
 
-set(CMAKE_CXX_STANDARD 17) # C++17 or Higher version
+set(CMAKE_CXX_STANDARD 11) # C++11 or Higher version
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 if(WIN32)
